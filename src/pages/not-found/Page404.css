@@ -1,0 +1,9 @@
+.page-404 {
+  background-image: url('../../assets/404-black.jpg') !important;
+  background-image: url('https://cdn.mos.cms.futurecdn.net/snbrHBRigvvzjxNGuUtcck.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100% !important;
+  height: 100% !important;
+}

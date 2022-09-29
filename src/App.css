@@ -1,12 +1,10 @@
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css');
 body {
   box-sizing: border-box;
-  background-image: linear-gradient(
-    90deg,
-    rgba(76, 81, 109, 1) 0%,
-    rgba(9, 9, 38, 1) 25%,
-    rgba(0, 0, 0, 0.9112562505470938) 100%
-  );
+  /* background-color: #f4d03f; */
+  /* background-image: linear-gradient(90deg, #f4d03f 0%, #16a085 100%); */
+  background-color: black;
+  background-image: linear-gradient(90deg, #959494 0%, #010d0b 100%);
 }
 
 .form-grid {

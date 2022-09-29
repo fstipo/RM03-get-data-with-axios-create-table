@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import TableComp from './TableComp';
 
-import { getData, getSchema } from '../utils/utils';
+
+import { getData, formatData } from '../utils/utils';
 
 const Form = () => {
     const [url, setUrl] = useState("");
@@ -9,6 +10,7 @@ const Form = () => {
     const [data, setData] = useState("");
 
     useEffect(() => {
+        console.log(formatData(data.changedAt));
         console.dir(data);
     }, [data])
 

@@ -1,4 +1,5 @@
 import axios from "axios"
+import Moment from "moment"
 
 export async function getData(url, id) {
     let res = await axios.get(`${url}/${id}`)
@@ -10,6 +11,9 @@ export async function getData(url, id) {
 //     return res.data;
 // }
 
+// Moment(item.changedAt).format('DD.MM.YYYY, h:mm:ss A')
+
+export const formatData = (date) => Moment(date).format('DD.MM.YYYY, h:mm:ss A');
 
 
 
