@@ -11,9 +11,9 @@ const PageNotFound = () => {
                 </div>
             </div>
             <div className='info'>
-                <h2>We can't fetch the data</h2>
-                <p>Try another URL or another ID. Thank you</p>
-                <a href="https://jhey.dev" target="_blank" rel="noreferrer noopener">Home</a>
+                <h2>Sorry, we can't get the data</h2>
+                <p className='display-5'>Please try another URL or another ID</p>
+                {/* <a href="https://jhey.dev" target="_blank" rel="noreferrer noopener">Home</a> */}
             </div>
         </div>
     )
