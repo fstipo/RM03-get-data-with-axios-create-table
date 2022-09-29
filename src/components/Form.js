@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import TableComp from './TableComp';
+import PageNotFound from '../pages/not-found/PageNotFound';
 
 
 import { getData, formatData } from '../utils/utils';
@@ -8,8 +9,12 @@ const Form = () => {
     const [url, setUrl] = useState("");
     const [urlId, setURLId] = useState("");
     const [data, setData] = useState("");
+    const [showErrorPage, setErrorPage] = useState(false);
+
+
 
     useEffect(() => {
+        setErrorPage(false);
         console.log(formatData(data.changedAt));
         console.dir(data);
     }, [data])
@@ -18,6 +23,11 @@ const Form = () => {
         e.preventDefault();
         getData(url, urlId).then(data => setData(data))
             .catch(err => console.log(err.message));
+        if (data) {
+            setErrorPage(true);
+        } else {
+            setErrorPage(false);
+        }
     }
 
     const onClearUrlHandler = (e) => {
@@ -61,7 +71,8 @@ const Form = () => {
                     </form >
                 </div >
             </div >
-            {data && <TableComp dataList={data} />}
+            {!showErrorPage && data ? <TableComp dataList={data} /> : null}
+            {showErrorPage && < PageNotFound />}
 
         </>
     )

@@ -165,15 +165,15 @@ p {
   syntax: '<integer>';
 }
 body {
-  min-height: 100vh;
-  display: flex;
+  /* min-height: 100vh; */
+  /* display: flex; */
   font-family: 'Roboto', sans-serif;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   background: var(--bg);
   color: var(--color);
-  perspective: 1200px;
+  /* perspective: 1200px; */
   border-radius: 5px;
 }
 a {
@@ -239,8 +239,8 @@ p {
   border-radius: 10px;
 }
 .cloak__container {
-  height: 250vmax;
-  width: 250vmax;
+  height: 150vmax;
+  /* width: 250vmax; */
   position: absolute;
   top: 50%;
   left: 45%;

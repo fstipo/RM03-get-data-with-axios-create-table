@@ -12,7 +12,7 @@ function App() {
       <Header text="Get data with Axios and create tables" />
       <Main />
       {/* <Page404 /> */}
-      <PageNotFound />
+      {/* <PageNotFound /> */}
     </div>
   );
 }
