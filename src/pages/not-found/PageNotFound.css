@@ -202,6 +202,7 @@ p {
   --x: calc(50% + (var(--swing-x) * 0.5) * 1%);
   background: radial-gradient(var(--lit-header), var(--header) 45%) var(--x)
     100%/200% 200%;
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -235,6 +236,7 @@ p {
   bottom: 0;
   right: 0;
   overflow: hidden;
+  border-radius: 10px;
 }
 .cloak__container {
   height: 250vmax;
@@ -277,4 +279,8 @@ p {
     --swing-y: -100;
     --swing-x: 100;
   }
+}
+
+.page-404-container {
+  border-radius: 10px;
 }
