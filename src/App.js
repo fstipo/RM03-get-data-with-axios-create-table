@@ -11,8 +11,6 @@ function App() {
     <div className="container">
       <Header text="Get data with Axios and create tables" />
       <Main />
-      {/* <Page404 /> */}
-      {/* <PageNotFound /> */}
     </div>
   );
 }

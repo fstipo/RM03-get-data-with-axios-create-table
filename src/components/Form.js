@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import TableComp from './TableComp';
 import PageNotFound from '../pages/not-found/PageNotFound';
-
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import popover from './PopOver';
 
 import { getData, formatData } from '../utils/utils';
 
@@ -40,6 +41,13 @@ const Form = () => {
         setURLId("");
     }
 
+    const focusIdHandler = (e) => {
+        console.log("Focus on ID")
+        console.dir(e.target);
+        document.querySelector("#id").focus();
+
+    }
+
     return (
         <>
             <div className='mt-1 text-center card p-3' >
@@ -48,9 +56,8 @@ const Form = () => {
                     <form action='https://example.com' onSubmit={onSubmitHandler}>
                         <div className='form-grid'>
                             <div className='flow'>
-                                <label htmlFor='url' className='me-2' >URL:</label>
-                                <input className='me-2' id='url' type="url" size="45" placeholder='https://example.com' name='url' list='defaultURLs' pattern="https://.*" required autoFocus onChange={(e) => setUrl(e.target.value)} />
-                                <i className="bi bi-x-circle-fill" onClick={onClearUrlHandler}></i>
+                                <input className='me-2' id='url' type="url" size="45" placeholder='URL:&nbsp; https://example.com' name='url' list='defaultURLs' pattern="https://.*" required autoFocus onChange={(e) => setUrl(e.target.value)} />
+                                <i className="col-1 bi bi-x-circle-fill" onClick={onClearUrlHandler}></i>
                                 <datalist id="defaultURLs">
                                     <option value="https://es-demo.azurewebsites.net/v1/People/" label="ES Demo"></option>
                                     <option value="https://jsonplaceholder.typicode.com/posts/" label="JSON Placeholder - Posts (id=1-100)"></option>
@@ -60,15 +67,22 @@ const Form = () => {
                                     <option value="https://jsonplaceholder.typicode.com/todos/" label="JSON Placeholder - Todos (maxId=200)"></option>
                                 </datalist>
                             </div>
+
                             <div className='flow'>
-                                <label className='me-2'>ID:</label>
-                                <input className='me-2 url-id' type="number" placeholder='id' onChange={(e) => setURLId(e.target.value)} />
+                                <input className='me-2 url-id' id="id" type="number" placeholder='id' onChange={(e) => setURLId(e.target.value)} />
                                 <i className="bi bi-x-circle-fill" onClick={onClearIdHandler}></i>
                                 <small className='mx-5 text-start fw-bold'>Without id you will get all data</small>
+                            </div>
+                            <div className='flow'>
+                                <label className='ms-2'>history</label>
+                                <OverlayTrigger trigger="click" placement="right" overlay={popover} >
+                                    <input className='ms-2 history' type="checkbox" onClick={focusIdHandler}></input>
+                                </OverlayTrigger>
                             </div>
                             <button className='btn btn-dark text-uppercase url-btn'>Get data</button>
                         </div>
                     </form >
+
                 </div >
             </div >
             {!showErrorPage && data ? <TableComp dataList={data} /> : null}

@@ -6,7 +6,7 @@ const Page404 = () => {
             <h1>Hello</h1>
 
             {/* <img src="https://cdn.mos.cms.futurecdn.net/snbrHBRigvvzjxNGuUtcck.jpg"></img> */}
-            <img src="./404-black.jpg"></img>
+            <img src="./404-black.jpg" alt="404"></img>
         </div >
     )
 }
